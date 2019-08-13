@@ -1,0 +1,81 @@
+<h1 class="center">Edit Organisation</h1>
+<form (ngSubmit)="onEditOrg(f)"   #f="ngForm" >
+<div class="container">
+<div class="row">
+
+
+
+
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      <label>Organisation Name</label>
+      <input name="org_name" [(ngModel)]="Name" #org_name='ngModel' type="text" class="form-control"  placeholder="enter name of organisation">
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <label>Description</label>
+      <input  name="org_desc" [(ngModel)]="Desc"   #org_desc='ngModel'type="text" class="form-control" placeholder="enter description of organisation">
+    </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <label>Registration Address 1</label>
+    <input   name="org_add1" [(ngModel)]="Add1" #org_add1='ngModel' type="text" class="form-control"  placeholder="enter address of organisation">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Registration Address 2</label>
+      <input  name="org_add2" [(ngModel)]="Add2"  #org_add2='ngModel'type="text" class="form-control"  placeholder="enter address of organisation">
+  </div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
+    <label>City</label>
+      <input   name="org_city" [(ngModel)]="City"  #org_city='ngModel'type="text" class="form-control"  placeholder="enter city of organisation">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <label>State</label>
+    <input  name="org_state" [(ngModel)]="State"  #org_state='ngModel'type="text" class="form-control"  placeholder="enter state of organisation">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Zip Code</label>
+      <input  name="org_zip" [(ngModel)]="Zip"  #org_zip='ngModel'type="text" class="form-control"  placeholder="enter zip code of organisation">
+  </div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Country</label>
+      <input  name="org_country" [(ngModel)]="Country"  #org_country='ngModel'type="text" class="form-control"  placeholder="enter country of organisation">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <label>Website</label>
+    <input  name="org_website" [(ngModel)]="Website"  #org_website='ngModel' type="text" class="form-control"  placeholder="enter website of organisation">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Phone 1</label>
+      <input  name="org_phone1" [(ngModel)]="Phone1" #org_phone1='ngModel' type="text" class="form-control"  placeholder="enter phone no of organisation">
+  </div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Phone 2</label>
+      <input  name="org_phone2" [(ngModel)]="Phone2"  #org_phone2='ngModel'type="text" class="form-control"  placeholder="enter phone no of organisation">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <label>Fax</label>
+    <input  name="org_fax" [(ngModel)]="Fax" #org_fax='ngModel' type="text" class="form-control"  placeholder="enter fax of organisation">
+  </div>
+
+</div>
+<br>
+<div>
+    <button type="button" class="btn btn-primary btn-lg btn-block">Save</button>
+</div>
+
+</div>
+</form>
+
+

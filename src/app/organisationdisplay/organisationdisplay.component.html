@@ -1,0 +1,293 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<form align="center" class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <h1>Search</h1>
+    <input type="text" #f (keyup)="onSearch(f.value)">
+
+  </div>
+
+</form >
+<h1 class='bg bg-light'></h1>
+<div class='container'>
+
+  <button style="float-right" align="left" class="org" align="float-right" (click)="open(content)">Add ORGANISATION</button>
+</div>
+<!-- <input type="text" #f (keyup)="onSearch(f.value)"> -->
+<!-- <h1><button class="btn" class="btn btn-lg btn-warning" style="float-right"  type="submit" (click)="open(content)">Add Organisation</button></h1> -->
+<div class="col-md-9">
+
+    <div class="col">
+      <div class="row-sm-6 row-md-4" *ngFor="let item of arr">
+        <div class="thumbnail">
+
+          <div class="caption">
+              <div class="row">
+                  <table align="center">
+                    <th class="bye">Organisation</th>
+                    <tr>
+                      <th class="hi">Name</th>
+                    </tr>
+                    <tr><td class="hello">{{item.org_name}}</td></tr>
+                    <tr class="dddd">
+                        <th class="hi">Descripion</th>
+                      </tr>
+                      <tr><td class="hello">{{item.org_desc}}</td></tr>
+                      <tr>
+                          <th class="ads">Address 1</th><th class="add2">Address 2</th><th class="hi">City</th><th class="state">State</th>
+                        </tr>
+                        <tr><td class="gngr">{{item.org_add1}}</td><td class="ads3">{{item.org_add2}}</td><td class="hello">{{item.org_city}}</td><td class="state2">{{item.org_state}}</td></tr>
+
+
+
+
+
+
+                              <tr>
+                                  <th class="hi">Zip Code</th><th class="hi">Country</th><th class="hi">Phone 1</th>
+                                </tr>
+                                <tr><td class="hello">{{item.org_zip}}</td><td class="hello">{{item.org_country}}</td><td class="hello">{{item.org_phone1}}</td></tr>
+
+                                    <tr>
+                                        <th class="hi">Phone 2</th><th class="hi">Website</th><th class="hi">Fax</th>
+                                      </tr>
+
+                                      <tr><td class="hello">{{item.org_phone2}}</td><td class="hello">{{item.org_website}}</td><td class="hello">{{item.org_fax}}</td></tr><br/>
+                                      <button align="right" style="font-size:24px" class="delt" (click)="onOrganisationDelete(item)" ><span class="material-icons">delete</span></button>&nbsp;&nbsp;
+                                      <!--X<button style="font-size:24px" (click)="onUserEdit(item)"> <i class="material-icons">border_color</i></button>onOrganisationDelete(item)-->
+
+                                      <button style="float-right" class="hi" (click)="open(contents)" > <i class="material-icons">border_color</i></button>
+                                      <br/>
+                                      <br/>
+                                      <hr size="1000" class="hr">
+                    </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template #content let-modal>
+    <div class="container-fluid">
+      <h4 class="modal-title" id="modal-basic-title">Add Organisation</h4>
+      <button type="button" class="close bg bg-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">Close</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <!-- <div class='col-6'> -->
+      <form >
+
+        <div class="container">
+          <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-8">
+                <label>Organisation Name</label>
+                <input name="org_name" required  pattern="[a-zA-Z\s]*"  [(ngModel)]="org_name"  type="text" class="form-control"  placeholder="Enter Name ">
+                <!-- <label class="alert alert-danger" *ngIf="org_name.hasError('required') && !org_name.pristine" >Name is Required</label>
+                <label class="alert alert-danger" *ngIf="org_name.hasError('pattern') && !org_name.pristine" >Only Characters are Allowed</label> -->
+              </div>
+
+              <div class="col-xs-6 col-md-4">
+                <label>Description</label>
+                <input name="org_desc" required  pattern="[a-zA-Z\s]*"  [(ngModel)]="org_desc" type="text" class="form-control" placeholder="Enter description ">
+                <!-- <label class="alert alert-danger" *ngIf="org_desc.hasError('required') && !org_desc.pristine" >Desc is Required</label>
+                <label class="alert alert-danger" *ngIf="org_desc.hasError('pattern') && !org_desc.pristine" >Only Characters are Allowed</label> -->
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <label>Address 1</label>
+              <input name="org_add1" required  pattern="[a-zA-Z0-9_]*"  [(ngModel)]="org_add1"  type="text" class="form-control"  placeholder="Enter Address">
+              <!-- <label class="alert alert-danger" *ngIf="org_add1.hasError('required') && !org_add1.pristine" >Address is Required</label>
+                <label class="alert alert-danger" *ngIf="org_add1.hasError('pattern') && !org_add1.pristine" >Enter valid address</label> -->
+            </div>
+
+            <div class="col-xs-6 col-sm-4">
+              <label>Address 2</label>
+                <input name="org_add2" class="form-control" type="text" [(ngModel)]="org_add2" placeholder="Enter Address ">
+            </div>
+
+            <!-- Optional: clear the XS cols if their content doesn't match in height -->
+            <div class="clearfix visible-xs-block"></div>
+            <div class="col-xs-6 col-sm-4">
+              <label>City</label>
+                <input name="org_city" required  pattern="[a-zA-Z\s]*"  [(ngModel)]="org_city"  type="text" class="form-control"  placeholder="Enter City ">
+                <!-- <label class="alert alert-danger" *ngIf="org_city.hasError('required') && !org_city.pristine" >City is Required</label>
+                <label class="alert alert-danger" *ngIf="org_city.hasError('pattern') && !org_city.pristine" >Only Characters are Allowed</label> -->
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <label>State</label>
+              <input name="org_state" required  pattern="[a-zA-Z\s]*"  [(ngModel)]="org_state"  type="text" class="form-control"  placeholder="Enter State ">
+              <!-- <label class="alert alert-danger" *ngIf="org_state.hasError('required') && !org_state.pristine" >State is Required</label>
+                <label class="alert alert-danger" *ngIf="org_state.hasError('pattern') && !org_state.pristine" >Only Characters are Allowed</label> -->
+            </div>
+
+            <div class="col-xs-6 col-sm-4">
+              <label>Zip Code</label>
+                <input name="org_zip"  required  pattern="[0-9]*"  [(ngModel)]="org_zip"  type="text" class="form-control"  placeholder="Enter Zip ">
+                <!-- <label class="alert alert-danger" *ngIf="org_zip.hasError('required') && !org_Zip.pristine" >Zip is Required</label>
+                <label class="alert alert-danger" *ngIf="org_zip.hasError('pattern') && !org_Zip.pristine" >Only Numbers are Allowed</label> -->
+            </div>
+
+            <!-- Optional: clear the XS cols if their content doesn't match in height -->
+            <div class="clearfix visible-xs-block"></div>
+            <div class="col-xs-6 col-sm-4">
+              <label>Country</label>
+                <input name="org_country"  required  pattern="[a-zA-Z\s]*" [(ngModel)]="org_country"    type="text" class="form-control"  placeholder="Enter Country ">
+                <!-- <label class="alert alert-danger" *ngIf="org_country.hasError('required') && !org_country.pristine" >Country is Required</label>
+                <label class="alert alert-danger" *ngIf="org_country.hasError('pattern') && !org_country.pristine" >Only Characters are Allowed</label> -->
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <label>Website</label>
+              <input name="org_website" required  pattern="[https?://.+]*" [(ngModel)]="org_website"  type="text" class="form-control"  placeholder="Enter Website ">
+              <!-- <label class="alert alert-danger" *ngIf="org_website.hasError('required') && !org_website.pristine" >Website is Mandatory</label>
+              <label class="alert alert-danger" *ngIf="org_website.hasError('pattern') && !org_website.pristine" >Enter valid website</label> -->
+            </div>
+
+            <div class="col-xs-6 col-sm-4">
+              <label>Phone 1</label>
+                <input name="org_phone1" required  pattern="[0-9]*" [(ngModel)]="org_phone1"  type="text" class="form-control"  placeholder="Enter Phone1">
+                <!-- <label class="alert alert-danger" *ngIf="org_phone1.hasError('required') && !org_phone1.pristine" >Phone1 is Required</label>
+                <label class="alert alert-danger" *ngIf="org_phone1.hasError('pattern') && !org_phone1.pristine" >Only Numbers are Allowed</label> -->
+            </div>
+
+            <!-- Optional: clear the XS cols if their content doesn't match in height -->
+            <div class="clearfix visible-xs-block"></div>
+            <div class="col-xs-6 col-sm-4">
+              <label>Phone 2</label>
+                <input name="org_phone2" [(ngModel)]="org_phone2" class="form-control" type="text"
+                  placeholder="Enter Phone2">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">
+              <label>Fax</label>
+              <input name="org_fax" required  pattern="[0-9]*"  [(ngModel)]="org_fax"  class="form-control"  placeholder="Enter Fax">
+              <!-- <label class="alert alert-danger" *ngIf="org_fax.hasError('required') && !org_fax.pristine" >Fax is Required</label>
+              <label class="alert alert-danger" *ngIf="org_fax.hasError('pattern') && !org_fax.pristine" >Only Numbers are Allowed</label> -->
+            </div>
+
+
+          </div>
+          <br/>
+<div>
+              <button type="submit" (click)="onAddOrg()" >Submit</button>&nbsp;&nbsp;
+
+              <button type="button" aria-label="Close" (click)="modal.dismiss('Cross click')">Cancel</button>
+
+          </div>
+
+          <br>
+
+      </div>
+
+      </form>
+    </div>
+
+
+
+
+
+
+  </ng-template>
+
+
+<!--Edit organisation part-->
+
+
+<ng-template  #contents let-modal>
+  <h1 class="center">Edit Organisation</h1>
+<form (ngSubmit)="onEditOrg(f)"   #f="ngForm" >
+<div class="container">
+<div class="row">
+
+
+
+
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      <label>Organisation Name</label>
+      <input name="org_name" [(ngModel)]="org_name"  type="text" class="form-control"  placeholder="enter name of organisation">
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <label>Description</label>
+      <input  name="org_desc" [(ngModel)]="org_desc"   type="text" class="form-control" placeholder="enter description of organisation">
+    </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <label>Address 1</label>
+    <input   name="org_add1" [(ngModel)]="org_add1"  type="text" class="form-control"  placeholder="enter address of organisation">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Address 2</label>
+      <input  name="org_add2" [(ngModel)]="org_add2"  type="text" class="form-control"  placeholder="enter address of organisation">
+  </div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
+    <label>City</label>
+      <input   name="org_city" [(ngModel)]="org_city" type="text" class="form-control"  placeholder="enter city of organisation">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <label>State</label>
+    <input  name="org_state" [(ngModel)]="org_state"  type="text" class="form-control"  placeholder="enter state of organisation">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Zip Code</label>
+      <input  name="org_zip" [(ngModel)]="org_zip" type="text" class="form-control"  placeholder="enter zip code of organisation">
+  </div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Country</label>
+      <input  name="org_country" [(ngModel)]="org_country"  type="text" class="form-control"  placeholder="enter country of organisation">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <label>Website</label>
+    <input  name="org_website" [(ngModel)]="org_website"   type="text" class="form-control"  placeholder="enter website of organisation">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Phone 1</label>
+      <input  name="org_phone1" [(ngModel)]="org_phone1"  type="text" class="form-control"  placeholder="enter phone no of organisation">
+  </div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
+    <label>Phone 2</label>
+      <input  name="org_phone2" [(ngModel)]="org_phone2"  type="text" class="form-control"  placeholder="enter phone no of organisation">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <label>Fax</label>
+    <input  name="org_fax" [(ngModel)]="org_fax"  type="text" class="form-control"  placeholder="enter fax of organisation">
+  </div>
+
+</div>
+<br>
+<div>
+    <button type="button">Save</button>
+</div>
+<br/>
+
+</div>
+</form>
+
+
+
+</ng-template>
+

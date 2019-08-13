@@ -1,0 +1,62 @@
+th.hi {
+  font-size: 18px;
+  color: #777;
+}
+th.bye {
+  font-size: 30px;
+  color:black;
+}
+td.hello {
+  font-size: 25px;
+  color: rgba(24, 55, 190, 0.884);
+}
+th.state[_ngcontent-heq-c2] {
+  /* float: right; */
+  /* margin-right: -214px; */
+  color: #777;
+}
+th.state {
+  color: #777;
+  font-size: 18px;
+}
+td.state2 {
+  color: #0f3ec7;
+  font-size: 22px;
+}
+td.ads3 {
+  font-size: 22px;
+  color: #0f3ec7;
+}
+td.gngr {
+  font-size: 22px;
+  color: #0f3ec7;
+}
+th.ads {
+  color: #777;
+  font-size: 18px;
+}
+th.add2 {
+  color: #777;
+  font-size: 18px;
+}
+button.btn {
+  float: right;
+  margin-right: -980px;
+  color: #333;
+  background-color: #f0ad4e;
+}
+i.material-icons {
+  float: right;
+  margin-right: 21px;
+  /* background-color: #fff; */
+}
+button {
+  background-color: #ffc107;
+}
+hr.hr {
+  width: 361px;
+  color: #c31424;
+  background-color: rgba(0,0,0,.9);
+  height: 4px;
+}
+

@@ -1,0 +1,150 @@
+<h1 class="center">Add Organisation</h1>
+<form (ngSubmit)="onAddOrg(f)"   #f="ngForm" >
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8">
+          <label>Organisation Name</label>
+          <input type="org_name" required  pattern="[a-zA-Z\s]*"  ngModel #org_name="ngModel" type="text" class="form-control"  placeholder="Enter Name ">
+          <label class="alert alert-danger" *ngIf="org_name.hasError('required') && !org_name.pristine" >Name is Required</label>
+          <label class="alert alert-danger" *ngIf="org_name.hasError('pattern') && !org_name.pristine" >Only Characters are Allowed</label>
+        </div>
+
+        <div class="col-xs-6 col-md-4">
+          <label>Description</label>
+          <input type="org_desc" required  pattern="[a-zA-Z\s]*"  ngModel #org_desc="ngModel" type="text" class="form-control" placeholder="Enter description ">
+          <label class="alert alert-danger" *ngIf="org_desc.hasError('required') && !org_desc.pristine" >Desc is Required</label>
+          <label class="alert alert-danger" *ngIf="org_desc.hasError('pattern') && !org_desc.pristine" >Only Characters are Allowed</label>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <label>Registration Address 1</label>
+        <input type="org_add1" required  pattern="[a-zA-Z0-9_]*"  ngModel #org_add1="ngModel" type="text" class="form-control"  placeholder="Enter Address">
+        <label class="alert alert-danger" *ngIf="org_add1.hasError('required') && !org_add1.pristine" >Address is Required</label>
+          <label class="alert alert-danger" *ngIf="org_add1.hasError('pattern') && !org_add1.pristine" >Enter valid address</label>
+      </div>
+
+      <div class="col-xs-6 col-sm-4">
+        <label>Registration Address 2</label>
+          <input type="org_add2" class="form-control" type="text" placeholder="Enter Address ">
+      </div>
+
+      <!-- Optional: clear the XS cols if their content doesn't match in height -->
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-4">
+        <label>City</label>
+          <input type="org_city" required  pattern="[a-zA-Z\s]*"  ngModel #org_city="ngModel" type="text" class="form-control"  placeholder="Enter City ">
+          <label class="alert alert-danger" *ngIf="org_city.hasError('required') && !org_city.pristine" >City is Required</label>
+          <label class="alert alert-danger" *ngIf="org_city.hasError('pattern') && !org_city.pristine" >Only Characters are Allowed</label>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <label>State</label>
+        <input type="org_state" required  pattern="[a-zA-Z\s]*"  ngModel #org_state="ngModel" type="text" class="form-control"  placeholder="Enter State ">
+        <label class="alert alert-danger" *ngIf="org_state.hasError('required') && !org_state.pristine" >State is Required</label>
+          <label class="alert alert-danger" *ngIf="org_state.hasError('pattern') && !org_state.pristine" >Only Characters are Allowed</label>
+      </div>
+
+      <div class="col-xs-6 col-sm-4">
+        <label>Zip Code</label>
+          <input type="org_zip"  required  pattern="[0-9]*"  ngModel #org_zip="ngModel" type="text" class="form-control"  placeholder="Enter Zip ">
+          <label class="alert alert-danger" *ngIf="org_zip.hasError('required') && !org_Zip.pristine" >Zip is Required</label>
+          <label class="alert alert-danger" *ngIf="org_zip.hasError('pattern') && !org_Zip.pristine" >Only Numbers are Allowed</label>
+      </div>
+
+      <!-- Optional: clear the XS cols if their content doesn't match in height -->
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-4">
+        <label>Country</label>
+          <input type="org_country"  required  pattern="[a-zA-Z\s]*"  ngModel #org_country="ngModel"  type="text" class="form-control"  placeholder="Enter Country ">
+          <label class="alert alert-danger" *ngIf="org_country.hasError('required') && !org_country.pristine" >Country is Required</label>
+          <label class="alert alert-danger" *ngIf="org_country.hasError('pattern') && !org_country.pristine" >Only Characters are Allowed</label>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <label>Website</label>
+        <input type="org_website" required  pattern="[https?://.+]*"  ngModel #org_website="ngModel" type="text" class="form-control"  placeholder="Enter Website ">
+        <label class="alert alert-danger" *ngIf="org_website.hasError('required') && !org_website.pristine" >Website is Mandatory</label>
+        <label class="alert alert-danger" *ngIf="org_website.hasError('pattern') && !org_website.pristine" >Enter valid website</label>
+      </div>
+
+      <div class="col-xs-6 col-sm-4">
+        <label>Phone 1</label>
+          <input type="org_phone1" required  pattern="[0-9]*"  ngModel #org_phone1="ngModel" type="text" class="form-control"  placeholder="Enter Phone1">
+          <label class="alert alert-danger" *ngIf="org_phone1.hasError('required') && !org_phone1.pristine" >Phone1 is Required</label>
+          <label class="alert alert-danger" *ngIf="org_phone1.hasError('pattern') && !org_phone1.pristine" >Only Numbers are Allowed</label>
+      </div>
+
+      <!-- Optional: clear the XS cols if their content doesn't match in height -->
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-4">
+        <label>Phone 2</label>
+          <input type="org_phone2" class="form-control" type="text"
+            placeholder="Enter Phone2">
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <label>Fax</label>
+        <input type="org_fax" required  pattern="[0-9]*"  ngModel #org_fax="ngModel" class="form-control"  placeholder="Enter Fax">
+        <label class="alert alert-danger" *ngIf="org_fax.hasError('required') && !org_fax.pristine" >Fax is Required</label>
+        <label class="alert alert-danger" *ngIf="org_fax.hasError('pattern') && !org_fax.pristine" >Only Numbers are Allowed</label>
+      </div>
+
+
+    </div>
+
+    <br>
+    <div>
+        <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <br>
+        <button type="button" class="btn btn-default btn-lg btn-block">Cancel</button>
+
+    </div>
+</div>
+</form>
+
+
+ -->
+ <div class="container">
+  <h2>Modal Example</h2>
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
